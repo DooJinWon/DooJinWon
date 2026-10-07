@@ -17,22 +17,15 @@ MLX90614 → I²C → ESP8266 → Wi-Fi / HTTP → Flask → CSV
                      └── 60-second deep sleep cycle
 ```
 
-[View project](https://github.com/DooJinWon/ESP8266_Low_Power_Sensor_Data_Logger) · [Read firmware](https://github.com/DooJinWon/ESP8266_Low_Power_Sensor_Data_Logger/blob/main/2nd%20day_Temp%20device%20with%20IR/IRdevice_uploaded_on_esp8266.ino) · [See server](https://github.com/DooJinWon/ESP8266_Low_Power_Sensor_Data_Logger/blob/main/2nd%20day_Temp%20device%20with%20IR/server.py)
+[View project](https://github.com/DooJinWon/ESP8266_Low_Power_Sensor_Data_Logger) · [Read firmware](https://github.com/DooJinWon/ESP8266_Low_Power_Sensor_Data_Logger/blob/main/day-02-ir-temperature-logger/IRdevice_uploaded_on_esp8266.ino) · [See server](https://github.com/DooJinWon/ESP8266_Low_Power_Sensor_Data_Logger/blob/main/day-02-ir-temperature-logger/server.py)
 
-### 02 · PPG Blood Pressure Estimation / TinyML Preparation
+### 02 · On-Device PPG Blood Pressure Estimation
 
-**Python · PyTorch · 1D CNN · ONNX · C model data**
+**nRF52840 · MAX30102 · Zephyr · Edge Impulse · 1D CNN**
 
-A signal-processing and model-development project exploring blood pressure estimation from PPG. Published code includes preprocessing, CNN training, ONNX export, and conversion of model bytes into a C header for embedded integration.
+POSTECH capstone team project. I implemented the sensing and inference pipeline, from PPG acquisition and preprocessing to MCU deployment and subject-specific calibration. The final report records MAE of **8.15 → 2.67 mmHg** across three raw/calibrated comparison rows and a **9.56-second** average inference time over ten repetitions. This is a small research-prototype evaluation; power values are estimates.
 
-```text
-PPG / ABP data → Preprocessing → CNN training → ONNX export
-TFLite model bytes → C header → Embedded integration
-```
-
-The public repository documents the model-development workflow; MCU firmware and reproducible hardware benchmarks are not included in the published source.
-
-[View project and report](https://github.com/DooJinWon/TinyML-Based-Low-Energy-Device-for-Blood-Pressure-Estimation-Using-PPG-Signal-Analysis) · [Browse code](https://github.com/DooJinWon/TinyML-Based-Low-Energy-Device-for-Blood-Pressure-Estimation-Using-PPG-Signal-Analysis/tree/main/code)
+[View implementation and results](https://github.com/DooJinWon/TinyML-Based-Low-Energy-Device-for-Blood-Pressure-Estimation-Using-PPG-Signal-Analysis) · [Browse scripts](https://github.com/DooJinWon/TinyML-Based-Low-Energy-Device-for-Blood-Pressure-Estimation-Using-PPG-Signal-Analysis/tree/main/src)
 
 ### 03 · KiCad MCP Server
 
@@ -40,7 +33,7 @@ The public repository documents the model-development workflow; MCU firmware and
 
 A tooling project exposing schematic and PCB operations through an MCP server. Source modules cover schematic editing, board placement, routing integration, and KiCad CLI operations for design checks and manufacturing outputs.
 
-[View project](https://github.com/DooJinWon/kicad-mcp-server) · [Read tool documentation](https://github.com/DooJinWon/kicad-mcp-server/tree/main/kicad-mcp) · [Browse implementation](https://github.com/DooJinWon/kicad-mcp-server/tree/main/kicad-mcp/tools)
+[View project](https://github.com/DooJinWon/kicad-mcp-server) · [Read tool documentation](https://github.com/DooJinWon/kicad-mcp-server/blob/main/docs/setup.md) · [Browse implementation](https://github.com/DooJinWon/kicad-mcp-server/tree/main/tools)
 
 ## Additional work
 
