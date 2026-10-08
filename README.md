@@ -1,8 +1,36 @@
 # Jinwon Doo
 
-### Electrical Engineering · Embedded Systems · Sensor Interfaces
+### Electrical Engineering · FPGA / RTL · Embedded Systems · Sensor Interfaces
 
-Fourth-year Electrical Engineering undergraduate, currently studying at the University of Illinois Urbana-Champaign as an exchange student. I’m interested in firmware, sensor systems, and tools that connect hardware to software.
+Fourth-year Electrical Engineering undergraduate, currently studying at the University of Illinois Urbana-Champaign as an exchange student. I’m interested in firmware, sensor systems, and tools that connect hardware to software. I’m also interested in FPGA-based high-frequency trading (HFT), particularly low-latency market-data processing, reliable streaming architectures, and hardware design and verification.
+
+## Current FPGA projects
+
+**SystemVerilog · Vivado · RTL design · Testbenches**
+
+### ILLIT · FPGA Streaming Market-Data Receiver
+
+*Ingress Low-Latency Information Transport*
+
+An FPGA ingress frontend for receiving and normalizing high-rate market-data streams. The design includes FIFO buffering, flow control, and overflow handling, with a testbench for synthetic market-data inputs.
+
+**Status:** RTL design and testbench implementation completed; preparing for physical FPGA board bring-up.
+
+### RESCENE · FPGA Market-Data Consistency and Recovery Engine
+
+*Reliable Exchange Stream Consistency and Network-recovery Engine*
+
+An FPGA engine for parsing CME-inspired market-data payloads, arbitrating redundant A/B feeds, removing duplicates, and detecting sequence gaps. Snapshot-based recovery, buffered incremental-event replay, and atomic order-book switching are designed to preserve Top-N order-book consistency after packet loss.
+
+**Status:** RTL design and testbench implementation completed; preparing for physical FPGA board bring-up.
+
+```text
+ILLIT: stream reception → buffering / flow control → normalized events
+                                                        ↓
+RESCENE: A/B arbitration → sequence checking → order-book updates / recovery
+```
+
+The projects can be demonstrated independently; ILLIT can later serve as an input frontend for RESCENE. RESCENE uses a simplified CME-inspired payload format. Actual exchange connectivity and full production CME MDP 3.0 support are outside the current scope.
 
 ## Selected projects
 
@@ -43,7 +71,7 @@ A tooling project exposing schematic and PCB operations through an MCP server. S
 
 | Area | Technologies represented in my projects |
 | :--- | :--- |
-| Embedded firmware | C++, Arduino, ESP8266, I²C, sensor acquisition, deep sleep |
+| FPGA / digital design | SystemVerilog, Vivado, streaming RTL, FIFOs, testbenches, market-data recovery |\n| Embedded firmware | C++, Arduino, ESP8266, I²C, sensor acquisition, deep sleep |
 | Device-to-server integration | Wi-Fi, HTTP / JSON, Python, Flask, CSV logging |
 | Signal processing and ML | MATLAB, Python, PyTorch, PPG preprocessing, CNN, LSTM / GRU |
 | Engineering tools | KiCad, Python automation, MCP, ONNX, model-to-C conversion |
