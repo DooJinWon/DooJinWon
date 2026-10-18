@@ -63,6 +63,20 @@ A tooling project exposing schematic and PCB operations through an MCP server. S
 
 [View project](https://github.com/DooJinWon/kicad-mcp-server) · [Read tool documentation](https://github.com/DooJinWon/kicad-mcp-server/blob/main/docs/setup.md) · [Browse implementation](https://github.com/DooJinWon/kicad-mcp-server/tree/main/tools)
 
+### 04 · Pathology Simplifier · NCSA Ashby Hackathon 2026
+
+**Python · PyTorch · Hugging Face Transformers · MedGemma 4B · PEFT · Few-shot prompting**
+
+A pathology education project exploring how AI can explain expert captions to early medical students while retaining the underlying findings and diagnostic uncertainty.
+
+The final caption explanation workflow loads `google/medgemma-4b-it` with a local PEFT adapter and uses five worked examples to guide educational explanations. The prompt preserves anatomical context, severity, negations, and assessment limitations while explaining essential medical vocabulary.
+
+The broader **Dual-Track Explainable AI for Histopathology Education** concept pairs this language track with a proposed MUSK vision encoder and five independent morphology predictions: gland architecture, nuclear atypia, nuclear organization, stromal invasion, and intraluminal necrosis. A combined report would connect accessible explanations with structured visual evidence.
+
+**Published:** final interactive GPU inference script, five-example prompt, and setup documentation. **Planned:** image caption integration, morphology classification, and evaluation with students and pathology reviewers. The repository does not report validated accuracy or educational outcomes, and model weights and adapter assets are supplied separately.
+
+[View project and architecture](https://github.com/DooJinWon/pathology-simplifier) · [Final inference script](https://github.com/DooJinWon/pathology-simplifier/blob/main/try_medgemma_fewshot.py) · [Few-shot prompt](https://github.com/DooJinWon/pathology-simplifier/blob/main/fewshot_instruction.txt)
+
 ## Additional work
 
 - [MATLAB PPG experiments](https://github.com/DooJinWon/Matlab_PPG): signal preprocessing and LSTM / GRU modeling experiments.
@@ -71,9 +85,11 @@ A tooling project exposing schematic and PCB operations through an MCP server. S
 
 | Area | Technologies represented in my projects |
 | :--- | :--- |
-| FPGA / digital design | SystemVerilog, Vivado, streaming RTL, FIFOs, testbenches, market-data recovery |\n| Embedded firmware | C++, Arduino, ESP8266, I²C, sensor acquisition, deep sleep |
+| FPGA / digital design | SystemVerilog, Vivado, streaming RTL, FIFOs, testbenches, market-data recovery |
+| Embedded firmware | C++, Arduino, ESP8266, I²C, sensor acquisition, deep sleep |
 | Device-to-server integration | Wi-Fi, HTTP / JSON, Python, Flask, CSV logging |
 | Signal processing and ML | MATLAB, Python, PyTorch, PPG preprocessing, CNN, LSTM / GRU |
+| Medical AI prototype | MedGemma 4B, Transformers, PEFT adapter inference, few-shot prompts, pathology caption explanations |
 | Engineering tools | KiCad, Python automation, MCP, ONNX, model-to-C conversion |
 
 ## Contact
